@@ -3,6 +3,7 @@ sample/**/package-lock.json
 
 # dependencies
 node_modules/
+dist/
 
 # IDE
 /.idea
@@ -51,4 +52,5 @@ build/config\.gypi
 
 .npmrc
 pnpm-lock.yaml
+
 /.history
