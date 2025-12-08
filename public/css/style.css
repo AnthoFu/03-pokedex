@@ -1,0 +1,63 @@
+/* Estilos generales y reseteo básico */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0; /* Elimina el margen predeterminado del navegador */
+    padding: 0;
+    background-color: #f4f4f9; /* Fondo muy claro */
+    color: #333; /* Color de texto oscuro para fácil lectura */
+}
+
+/* Estilos del encabezado */
+.main-header {
+    background-color: #007bff; /* Un azul primario */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.main-header h1 {
+    font-size: 2em; /* Tamaño de fuente más grande para el título */
+    margin: 0;
+}
+
+/* Estilos del contenedor principal */
+.container {
+    max-width: 900px; /* Ancho máximo para centrar el contenido */
+    margin: 40px auto; /* Margen superior/inferior de 40px y centrado horizontal */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave para el contenedor */
+}
+
+.container p {
+    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+    margin-bottom: 15px;
+}
+
+/* Estilos para un elemento de tarjeta (opcional) */
+.card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 25px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.card h2 {
+    color: #007bff;
+    margin-top: 0;
+}
+
+/* Estilos del pie de página */
+.main-footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.9em;
+    position: fixed; /* Lo fija en la parte inferior */
+    bottom: 0;
+    width: 100%;
+}
