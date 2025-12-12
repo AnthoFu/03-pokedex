@@ -28,6 +28,10 @@ npm i -g @nestjs/cli
 docker-compose up -d
 ```
 
+5. Conectarse a la base de datos de mongoDB (En mi caso utilicé TablePlus)
+
+mongodb://localhost:27017/nest-pokemon
+
 ## Stack tecnologico utilizado:
 
 * MongoDB
