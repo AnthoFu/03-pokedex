@@ -63,8 +63,23 @@ export class PokemonService {
     return pokemon;
   }
 
-  update(id: number, updatePokemonDto: UpdatePokemonDto) {
-    return `This action updates a #${id} pokemon`;
+  async update(term: string, updatePokemonDto: UpdatePokemonDto) {
+    try {
+      const pokemon = await this.findOne(term); 
+    if (updatePokemonDto.name){
+      updatePokemonDto.name = updatePokemonDto.name.toLocaleLowerCase();
+    }
+    await pokemon.updateOne( updatePokemonDto, { new: true } )
+    
+    return {...pokemon.toJSON(), ...updatePokemonDto};
+    }
+    catch (error){
+      if (error.code === 11000){
+        throw new BadRequestException(`Este pokemon ya existe en la base de datos ${JSON.stringify( error.keyValue )}`);
+      }
+      console.log(error);
+      throw new InternalServerErrorException('Ha ocurrido un error interno, por favor comuniquese con el equipo de soporte')
+    }
   }
 
   remove(id: number) {
