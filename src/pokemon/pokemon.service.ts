@@ -25,16 +25,12 @@ export class PokemonService {
       const pokemon = await this.pokemonModel.create(createPokemonDto);
     return pokemon;
   } catch(error){
-    if (error.code === 11000){
-      throw new BadRequestException(`Este pokemon ya existe en la base de datos ${JSON.stringify( error.keyValue )}`);
-    }
-    console.log(error);
-    throw new InternalServerErrorException('Ha ocurrido un error interno, por favor comuniquese con el equipo de soporte')
+    this.handleExceptions(error)
   }
-  }
+}
 
-  findAll() {
-    return `This action returns all pokemon`;
+  async findAll() {
+    return await this.pokemonModel.find();
   }
 
   async findOne(term: string) {
@@ -58,8 +54,6 @@ export class PokemonService {
 
     if ( !pokemon ) 
       throw new NotFoundException(`El Pokemon con el id, nombre o no "${ term }" no fue encontrado.`);
-    
-
     return pokemon;
   }
 
@@ -74,15 +68,21 @@ export class PokemonService {
     return {...pokemon.toJSON(), ...updatePokemonDto};
     }
     catch (error){
-      if (error.code === 11000){
-        throw new BadRequestException(`Este pokemon ya existe en la base de datos ${JSON.stringify( error.keyValue )}`);
-      }
-      console.log(error);
-      throw new InternalServerErrorException('Ha ocurrido un error interno, por favor comuniquese con el equipo de soporte')
+      this.handleExceptions(error);
     }
   }
 
   remove(id: number) {
     return `This action removes a #${id} pokemon`;
+  }
+
+
+  // Metodo para el manejo de errores, colocado aca para evitar repetir la logica en cada metodo
+  private handleExceptions(error: any){
+    if (error.code === 11000){
+      throw new BadRequestException(`Este pokemon ya existe en la base de datos ${JSON.stringify( error.keyValue )}`);
+    }
+    console.log(error);
+    throw new InternalServerErrorException('Ha ocurrido un error interno, por favor comuniquese con el equipo de soporte')
   }
 }
