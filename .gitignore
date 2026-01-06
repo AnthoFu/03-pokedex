@@ -55,5 +55,6 @@ pnpm-lock.yaml
 
 /.history
 
-.evn
+.env
 mongo/
+
