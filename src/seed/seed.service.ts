@@ -22,12 +22,19 @@ export class SeedService {
     
     const { data } = await this.axios.get<PokeResponse>('https://pokeapi.co/api/v2/pokemon?limit=100');
 
+    await this.pokemonModel.deleteMany({}); // delete * from pokemons
+
+    const pokemonToInsert: {name: string, no: number} [] = [];
+
     data.results.forEach(async ({name, url}) => {
       const segment = url.split('/');
       const no:number = +segment [ segment.length - 2 ];
-      const pokemon = await this.pokemonModel.create({name, no});
-      console.log ('[Pokemon obtenido mediante /seed]:', name, no);
-    } )
+      // const pokemon = await this.pokemonModel.create({name, no});
+      // console.log ('[Pokemon obtenido mediante /seed]:', name, no);
+      pokemonToInsert.push();
+    });
+
+    await this.pokemonModel.insertMany(pokemonToInsert);
 
     return 'Seed ejecutado con exito';
   }
