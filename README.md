@@ -53,3 +53,8 @@ __mongodb://localhost:27017/nest-pokemon__
 
 * MongoDB
 * Nest
+
+## Herramientas de produccion utilizadas:
+
+* Render (Backend)
+* MongoDB Atlas (Base de datos)
