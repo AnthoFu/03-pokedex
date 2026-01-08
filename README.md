@@ -54,6 +54,16 @@ __mongodb://localhost:27017/nest-pokemon__
 * MongoDB
 * Nest
 
+## Pasos para generar el __Build__ para produccion
+
+1. Crear el archivo .env.prod
+2. Llenar las variables del entorno de prod
+3. Crear la ueva imagen
+
+```
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+```
+
 ## Herramientas de produccion utilizadas:
 
 * Render (Backend)

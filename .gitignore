@@ -57,4 +57,4 @@ pnpm-lock.yaml
 
 .env
 mongo/
-
+.env.prod
