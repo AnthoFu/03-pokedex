@@ -3,26 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex API - AnthoFu</title>
+    <title>Pokedex API | AnthoFu</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css"> 
 </head>
 <body>
-    <header class="main-header">
-        <h1>🚀 Proyecto Nest.js: Pokedex API 🚀</h1>
+    <header class="hero-section text-center text-white d-flex align-items-center justify-content-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-3">🚀 Pokedex API 🚀</h1>
+            <p class="lead mb-4">Una API robusta construida con Nest.js y MongoDB para gestionar datos de Pokémon.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://zero3-pokedex-kzlg.onrender.com/api/v2/pokemon" class="btn btn-light btn-lg px-4 fw-bold text-primary">Ver API en Producción</a>
+                <a href="https://github.com/AnthoFu/03-pokedex" class="btn btn-outline-light btn-lg px-4 fw-bold">GitHub Repo</a>
+            </div>
+        </div>
     </header>
 
-    <main class="container">
-        <p>¡Bienvenido! Este es el *front-end* de tu aplicación construida con **Nest.js**.</p>
-        <p>Aquí es donde comenzarás a mostrar el contenido dinámico de tu API.</p>
-        
-        <div class="card">
-            <h2>Ejemplo de Contenido</h2>
-            <p>Este es un elemento de tarjeta para organizar la información.</p>
-        </div>
+    <main class="container my-5">
+        <section class="row mb-5">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm p-4">
+                    <h2 class="h4 fw-bold text-primary mb-3">✅ Proyecto Finalizado</h2>
+                    <p>Esta aplicación ha alcanzado su etapa de producción. Implementa todas las funcionalidades core requeridas para una API RESTful moderna, incluyendo validaciones, transformaciones de datos y manejo de errores persistente con MongoDB.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm p-4">
+                    <h2 class="h4 fw-bold text-primary mb-3">🛠️ Stack Tecnológico</h2>
+                    <ul class="list-unstyled">
+                        <li>🔹 <strong>Nest.js</strong> - Framework de Node.js</li>
+                        <li>🔹 <strong>TypeScript</strong> - Tipado estático</li>
+                        <li>🔹 <strong>MongoDB</strong> - Base de Datos NoSQL</li>
+                        <li>🔹 <strong>Mongoose</strong> - ODM para MongoDB</li>
+                        <li>🔹 <strong>Docker</strong> - Containerización</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="h3 fw-bold text-center mb-4">📍 Endpoints Disponibles</h2>
+            <div class="table-responsive">
+                <table class="table table-hover border">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Método</th>
+                            <th>Endpoint</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge bg-success">GET</span></td>
+                            <td><code>/api/v2/pokemon</code></td>
+                            <td>Obtener lista de Pokemons (Soporta paginación)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge bg-success">GET</span></td>
+                            <td><code>/api/v2/pokemon/:id_o_nombre</code></td>
+                            <td>Obtener un Pokemon por ID, MongoID o Nombre</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge bg-primary">POST</span></td>
+                            <td><code>/api/v2/pokemon</code></td>
+                            <td>Crear un nuevo Pokemon</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge bg-warning text-dark">PATCH</span></td>
+                            <td><code>/api/v2/pokemon/:id_o_nombre</code></td>
+                            <td>Actualizar un Pokemon existente</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge bg-danger">DELETE</span></td>
+                            <td><code>/api/v2/pokemon/:id</code></td>
+                            <td>Eliminar un Pokemon por MongoID</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge bg-info text-dark">GET</span></td>
+                            <td><code>/api/v2/seed</code></td>
+                            <td>Poblar la base de datos con datos iniciales</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
-    <footer class="main-footer">
-        <p>&copy; 2025 AnthoFu | Desarrollado con Nest.js</p>
+    <footer class="main-footer py-4 bg-dark text-white text-center mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 AnthoFu | Desarrollado con pasión usando Nest.js</p>
+            <small class="text-secondary">Visita mi portafolio en <a href="https://github.com/AnthoFu" class="text-white-50">GitHub</a></small>
+        </div>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

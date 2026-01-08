@@ -1,63 +1,60 @@
-/* Estilos generales y reseteo básico */
+/* Estilos personalizados para Pokedex API */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0; /* Elimina el margen predeterminado del navegador */
-    padding: 0;
-    background-color: #f4f4f9; /* Fondo muy claro */
-    color: #333; /* Color de texto oscuro para fácil lectura */
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #2d3436;
 }
 
-/* Estilos del encabezado */
-.main-header {
-    background-color: #007bff; /* Un azul primario */
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #007bff 0%, #00d2ff 100%);
+    min-height: 400px;
+    padding: 60px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.main-header h1 {
-    font-size: 2em; /* Tamaño de fuente más grande para el título */
-    margin: 0;
+.hero-section h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos del contenedor principal */
-.container {
-    max-width: 900px; /* Ancho máximo para centrar el contenido */
-    margin: 40px auto; /* Margen superior/inferior de 40px y centrado horizontal */
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave para el contenedor */
-}
-
-.container p {
-    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
-    margin-bottom: 15px;
-}
-
-/* Estilos para un elemento de tarjeta (opcional) */
+/* Cards */
 .card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-top: 25px;
-    border-radius: 6px;
-    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
 }
 
-.card h2 {
-    color: #007bff;
-    margin-top: 0;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Estilos del pie de página */
+/* Endpoints Table */
+.table {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+code {
+    color: #d63384;
+    background-color: #f8f9fa;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/* Footer */
 .main-footer {
-    text-align: center;
-    padding: 15px 0;
-    background-color: #333;
-    color: #fff;
-    font-size: 0.9em;
-    position: fixed; /* Lo fija en la parte inferior */
-    bottom: 0;
-    width: 100%;
+    border-top: 1px solid #444;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 300px;
+        padding: 40px 0;
+    }
+    
+    .display-3 {
+        font-size: 2.5rem;
+    }
 }
